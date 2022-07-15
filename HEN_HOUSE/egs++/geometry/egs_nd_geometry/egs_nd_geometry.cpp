@@ -28,6 +28,8 @@
 #                   Ernesto Mainegra-Hing
 #                   Hubert Ho
 #                   Randle Taylor
+#                   Manuel Stoeckl
+#                   Marc Chamberland
 #
 ###############################################################################
 */

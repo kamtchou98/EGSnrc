@@ -25,7 +25,10 @@
 #
 #  Contributors:    Frederic Tessier
 #                   Hubert Ho
-#                   Ernesto Mainegra-Hing
+#                   Ernesto Mainegra-Hing:
+#                   Blake Walters
+#                   Marc Chamberland
+#                   Reid Townson
 #
 ###############################################################################
 */

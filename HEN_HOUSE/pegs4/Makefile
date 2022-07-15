@@ -24,6 +24,7 @@
 #  Author:          Iwan Kawrakow
 #
 #  Contributors:    Frederic Tessier
+#                   Ernesto Mainegra-Hing
 #
 ###############################################################################
 

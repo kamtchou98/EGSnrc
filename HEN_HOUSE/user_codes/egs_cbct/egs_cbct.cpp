@@ -24,7 +24,8 @@
 #  Authors:         Iwan Kawrakow, 2007
 #                   Ernesto Mainegra-Hing, 2007
 #
-#  Contributors:
+#  Contributors:    Blake Walters
+#                   Reid Townson
 #
 ###############################################################################
 #
