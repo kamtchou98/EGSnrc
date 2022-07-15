@@ -24,6 +24,8 @@
 #  Author:          Ernesto Mainegra-Hing, 2003
 #
 #  Contributors:    Iwan Kawrkaow
+#                   Cody Crewson
+#                   Frederic Tessier
 #
 ###############################################################################
 */
