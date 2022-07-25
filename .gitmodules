@@ -1,0 +1,3 @@
+[submodule "contrib/3ddose_tools"]
+	path = contrib/3ddose_tools
+	url = https://github.com/MartinMartinov/3ddose_tools
