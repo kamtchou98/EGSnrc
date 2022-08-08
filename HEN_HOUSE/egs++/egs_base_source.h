@@ -178,6 +178,11 @@ public:
         return -1;
     };
 
+    /* A virtual function that prints statistics on the emissions from a source.
+    * Currently this is only implemented for EGS_RadionuclideSource.
+    */
+    virtual void printSampledEmissions() {};
+
     /*!  \brief Store the source state into the stream \a data_out.
      *
      * Every source should reimplement this method to store
