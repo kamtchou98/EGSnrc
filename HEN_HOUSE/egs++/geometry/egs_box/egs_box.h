@@ -89,8 +89,8 @@ A simple example:
 :start geometry definition:
     :start geometry:
         name        = my_box
-        library     = egs_box
-        box size    = 1 2 3
+        library     = egs_box   
+        box size    = 2 4 6     # -1 < x < 1; -2 < y < 2; 3 < z < 3
         :start media input:
             media = water
         :stop media input:
