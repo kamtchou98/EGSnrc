@@ -231,7 +231,11 @@ public:
      */
     virtual EGS_Float hownear(int ireg, const EGS_Vector &x) = 0;
 
+<<<<<<< Updated upstream
     /*! \brief Calculates the volume of region ireg.
+=======
+    /*! \brief Calculates the mass of region ireg.
+>>>>>>> Stashed changes
 
       Currently only implemented EGS_XYZGeometry, EGS_cSpheres,
       EGS_cSphericalShell, EGS_AEnvelope, and EGS_RZGeometry
