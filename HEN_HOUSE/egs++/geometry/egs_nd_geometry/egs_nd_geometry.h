@@ -28,6 +28,7 @@
 #                   Frederic Tessier
 #                   Reid Townson
 #                   Randle Taylor
+#                   Matjaz Payrits
 #
 ###############################################################################
 */
@@ -644,7 +645,11 @@ medium2  min_density2 max_density2 default_density2
 and defines that <code>medium1</code> is to be used for all voxels
 with a mass density between <code>min_density1</code> and
 <code>max_density1</code>, etc., assuming <code>default_density1</code>, etc.,
-id the default mass density for this medium.
+is the default mass density for this medium. These default densities must 
+exactly match the densitites, in g/cm3, in their media's respective PEGS4 data
+or density correction files. Stating them is necessary and is a workaround for
+the fact that the PEGS system is not yet hatched at egs++ geometry
+initialization time and cannot yet be used to retrieve the default densities.
 There can be an arbitrary number of
 lines in the ct ramp file. The <code>density_file</code> is a binary
 file that contains: 1 byte set to 0 or 1 for data written on a big- or
@@ -1118,12 +1123,45 @@ public:
     };
 
 
+<<<<<<< Updated upstream
     EGS_Float getVolume(int ireg) {
         int iz = ireg/nxy;
         int ir = ireg - iz*nxy;
         int iy = ir/nx;
         int ix = ir - iy*nx;
         return (xpos[ix+1]-xpos[ix])*(ypos[iy+1]-ypos[iy])*(zpos[iz+1]-zpos[iz]);
+=======
+    EGS_Float getMass(int ireg) {
+        if (ireg < 0) {
+            return 1.0;
+        }
+		
+	    int const iz = ireg / nxy;
+        int const ir = ireg % nxy;
+        int const iy = ir / nx;
+        int const ix = ir % nx;
+            
+
+        int const voxelPlaneIndices[3] = {ix, iy, iz};
+        EGS_Float volume = 1.0;
+
+        for (int dirIndex = 0; dirIndex < 3; ++dirIndex) {
+            EGS_Float const lowerBound = getBound(dirIndex, voxelPlaneIndices[dirIndex]);
+            EGS_Float const upperBound = getBound(dirIndex, voxelPlaneIndices[dirIndex] + 1);
+
+            volume *= (upperBound - lowerBound);               
+        }
+		
+
+        int const imed = medium(ireg);
+
+        EGS_Float density = app->getMediumRho(imed);
+        if (has_rho_scaling) {
+            density *= getRelativeRho(ireg);			
+        }
+
+        return volume * density;
+>>>>>>> Stashed changes
     }
 
     EGS_Float getBound(int idir, int ind) {
@@ -1531,6 +1569,10 @@ public:
         }
         return mindist/mindp;
     };
+	
+    EGS_Float getMass(int ireg) {
+        return 1.0;
+    }
 
     int computeIntersections(int ireg, int n, const EGS_Vector &X,
                              const EGS_Vector &u, EGS_GeometryIntersections *isections) {
