@@ -1187,11 +1187,15 @@ void EGS_AdvancedApplication::resetRNGState() {
 //************************************************************
 // Returns density for medium ind
 EGS_Float EGS_AdvancedApplication::getMediumRho(int ind) {
+<<<<<<< Updated upstream
     // handle the negative medium index for vacuum
     if (ind < 0) {
         return 0.0;
     }
     return the_media->rho[ind];
+=======
+    return ind < 0 ? 0.0 : the_media->rho[ind];
+>>>>>>> Stashed changes
 }
 // Returns edep
 EGS_Float EGS_AdvancedApplication::getEdep() {
