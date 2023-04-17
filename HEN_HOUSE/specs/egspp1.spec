@@ -57,6 +57,7 @@ C_SIMPLE_SOURCES = $(EGS_SOURCEDIR)egsnrc.macros $(MACHINE_MACROS) \
             $(EGSPP_USER_MACROS) \
             $(MACHINE_MORTRAN) $(EGS_SOURCEDIR)egs_utilities.mortran \
             $(EGS_SOURCEDIR)transportp.macros \
+			$(EGS_SOURCEDIR)rad_compton1.mortran \
             $(EGS_SOURCEDIR)get_inputs.mortran \
             $(EGS_SOURCEDIR)egsnrc.mortran
 
@@ -67,6 +68,7 @@ C_ADVANCED_SOURCES = $(EGS_SOURCEDIR)egsnrc.macros $(MACHINE_MACROS) \
             $(MACHINE_MORTRAN) $(EGS_SOURCEDIR)egs_utilities.mortran \
             $(EGS_INTERFACE)egs_c_interface2.mortran \
             $(EGS_SOURCEDIR)transportp.macros \
+			$(EGS_SOURCEDIR)rad_compton1.mortran \
             $(EGS_SOURCEDIR)get_inputs.mortran\
             $(EGS_SOURCEDIR)get_media_inputs.mortran \
             $(EGS_SOURCEDIR)pegs4_routines.mortran \
